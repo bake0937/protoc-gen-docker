@@ -1,0 +1,23 @@
+version: '3'
+services:
+  ts:
+    container_name: proton-ts
+    build: ./docker/ts
+    tty: true
+    stdin_open: true
+    working_dir: "/src" 
+    volumes:
+      - ./ts:/src/proto
+      - ./ts:/src/ts
+      - ./docker/ts/Makefile:/src/Makefile
+  go:
+    container_name: proton-go
+    build: ./docker/go
+    tty: true
+    stdin_open: true
+    working_dir: "/go/src" 
+    volumes:
+      - ./proto:/go/src/proto
+      - ./docker/go/Makefile:/go/src/Makefile
+      - ./go:/go/bin/github.com/ryutakomori/based-proton-go/src/go/proton
+      
