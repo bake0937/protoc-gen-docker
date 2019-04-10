@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package proton;
 
-option go_package = "github.com/ryutakomori/based-proton-go/src/go/proton";
+option go_package = "src/go/proton";
 
 // The greeting service definition.
 service Greeter {
