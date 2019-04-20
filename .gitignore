@@ -1,3 +1,4 @@
 src/go/*
 src/ts/*
 !.gitkeep
+.DS_Store

@@ -5,12 +5,12 @@ FROM golang:1.12.1
 RUN apt-get update && \
     apt-get -y install git unzip build-essential autoconf libtool
 
-RUN git clone https://github.com/google/protobuf.git && \
+RUN git clone https://github.com/google/protobuf.git -b v3.7.1 --depth 1 && \
     cd protobuf && \
     ./autogen.sh && \
     ./configure && \
-    make && \
-    make install && \
+    make -j4 && \
+    make -j4 install && \
     ldconfig && \
     make clean && \
     cd .. && \
