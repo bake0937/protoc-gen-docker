@@ -8,12 +8,14 @@ option go_package = "src/go/proton";
 import "address_data.proto";
 
 
-// The request message
-message ListAddressRequest {
-
+message CreateAddressRequest {
+  string email = 1;
 }
 
-// The response message 
+message CreateAddressResponse {}
+
+message ListAddressRequest {}
+
 message ListAddressResponse {
   repeated Address address = 1;
 }
@@ -21,4 +23,6 @@ message ListAddressResponse {
 // The service definition.
 service AddressService {
   rpc ListAddress (ListAddressRequest) returns (ListAddressResponse) {}
+  rpc CreateAddress (CreateAddressRequest) returns (CreateAddressResponse);
+
 }
