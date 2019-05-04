@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package proton;
+
+option go_package = "src/go/proton";
+
+
+import "address_data.proto";
+
+
+message CreateAddressRequest {
+  string email = 1;
+}
+
+message CreateAddressResponse {}
+
+message ListAddressRequest {}
+
+message ListAddressResponse {
+  repeated Address address = 1;
+}
+
+// The service definition.
+service AddressService {
+  rpc ListAddress (ListAddressRequest) returns (ListAddressResponse) {}
+  rpc CreateAddress (CreateAddressRequest) returns (CreateAddressResponse);
+
+}
