@@ -4,8 +4,6 @@ package proton;
 
 option go_package = "src/go/proton";
 
-
-// The response message 
 message Address {
   uint32 id = 1;
   string email = 2;

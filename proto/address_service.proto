@@ -20,7 +20,6 @@ message ListAddressResponse {
   repeated Address address = 1;
 }
 
-// The service definition.
 service AddressService {
   rpc ListAddress (ListAddressRequest) returns (ListAddressResponse) {}
   rpc CreateAddress (CreateAddressRequest) returns (CreateAddressResponse);
